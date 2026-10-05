@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fizogon — Hyperpop Artist</title>
+<meta name="description" content="Fizogon — hyperpop, digicore, scenecore, emo rap and emotional electronic music.">
+<meta name="theme-color" content="#050008">
+<link rel="icon" href="Images/Icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Fredoka:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{min-height:100vh;overflow-x:hidden;color:white;background:#050008;font-family:"Space Grotesk",sans-serif}
+body::selection{background:#ff159d;color:white}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit}
+
+.Background{position:fixed;inset:0;z-index:-10;overflow:hidden;background:radial-gradient(circle at 20% 10%,rgba(255,0,150,.16),transparent 28%),radial-gradient(circle at 85% 25%,rgba(110,0,255,.15),transparent 30%),radial-gradient(circle at 50% 100%,rgba(0,210,255,.08),transparent 35%),#050008}
+.Background::after{content:"";position:absolute;inset:0;opacity:.035;background-image:linear-gradient(rgba(255,255,255,.5) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.5) 1px,transparent 1px);background-size:5px 5px}
+.Grid{position:absolute;inset:-50%;opacity:.09;transform:perspective(500px) rotateX(65deg);background-image:linear-gradient(rgba(255,0,170,.3) 1px,transparent 1px),linear-gradient(90deg,rgba(255,0,170,.3) 1px,transparent 1px);background-size:70px 70px;animation:GridMove 18s linear infinite}
+@keyframes GridMove{to{transform:perspective(500px) rotateX(65deg) translateY(70px)}}
+.Glow{position:absolute;border-radius:50%;filter:blur(100px);pointer-events:none;animation:GlowFloat 9s ease-in-out infinite alternate}
+.Glow.One{width:420px;height:420px;left:-140px;top:-120px;background:#ff008c;opacity:.22}
+.Glow.Two{width:450px;height:450px;right:-180px;top:20%;background:#6400ff;opacity:.2;animation-delay:-3s}
+.Glow.Three{width:330px;height:330px;left:35%;bottom:-170px;background:#00d9ff;opacity:.12;animation-delay:-6s}
+@keyframes GlowFloat{from{transform:translate(0,0) scale(1)}to{transform:translate(70px,-50px) scale(1.2)}}
+
+.Particles{position:absolute;inset:0}
+.Particle{position:absolute;width:2px;height:2px;border-radius:50%;background:white;box-shadow:0 0 12px white;animation:ParticleFloat linear infinite}
+.Particle:nth-child(1){left:8%;top:20%;animation-duration:8s}.Particle:nth-child(2){left:17%;top:70%;animation-duration:12s}.Particle:nth-child(3){left:31%;top:34%;animation-duration:10s}.Particle:nth-child(4){left:45%;top:82%;animation-duration:9s}.Particle:nth-child(5){left:58%;top:18%;animation-duration:13s}.Particle:nth-child(6){left:70%;top:61%;animation-duration:11s}.Particle:nth-child(7){left:82%;top:30%;animation-duration:14s}.Particle:nth-child(8){left:92%;top:76%;animation-duration:9s}
+@keyframes ParticleFloat{0%,100%{transform:translateY(0);opacity:.15}50%{transform:translateY(-100px);opacity:1}}
+
+nav{position:fixed;top:18px;left:50%;transform:translateX(-50%);width:min(94%,1050px);padding:12px 14px 12px 20px;display:flex;align-items:center;justify-content:space-between;z-index:100;border:1px solid rgba(255,255,255,.1);border-radius:100px;background:rgba(8,3,14,.68);backdrop-filter:blur(25px);box-shadow:0 15px 50px rgba(0,0,0,.35),0 0 35px rgba(255,0,170,.08)}
+.NavLogo{font-family:Anton,sans-serif;font-size:1.45rem;letter-spacing:1px;text-shadow:0 0 10px #ff00a8,0 0 30px rgba(255,0,168,.5)}
+.NavLinks{display:flex;gap:30px}
+.NavLinks a{color:#888;font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;transition:.25s}
+.NavLinks a:hover{color:white;text-shadow:0 0 15px #ff20c8}
+.NavButton{padding:10px 18px;border-radius:100px;background:linear-gradient(100deg,#ff009d,#752cff);font-size:.75rem;font-weight:700;box-shadow:0 0 25px rgba(255,0,157,.35);transition:.3s}
+.NavButton:hover{transform:scale(1.07);box-shadow:0 0 40px rgba(255,0,157,.65)}
+
+.Hero{min-height:100vh;padding:150px 20px 100px;display:flex;align-items:center;justify-content:center;text-align:center;position:relative}
+.HeroContent{width:min(1100px,100%);animation:HeroIn 1.2s ease forwards}
+@keyframes HeroIn{from{opacity:0;transform:translateY(35px)}to{opacity:1;transform:translateY(0)}}
+.Eyebrow{display:inline-flex;align-items:center;gap:9px;padding:8px 15px;border:1px solid rgba(255,255,255,.1);border-radius:100px;background:rgba(255,255,255,.035);color:#aaa;font-size:.72rem;letter-spacing:2px;font-weight:700}
+.LiveDot{width:7px;height:7px;border-radius:50%;background:#ff159d;box-shadow:0 0 15px #ff159d;animation:Pulse 1.4s infinite}
+@keyframes Pulse{50%{transform:scale(1.8);opacity:.35}}
+.Hero h1{position:relative;margin-top:30px;font-family:Anton,sans-serif;font-size:clamp(7rem,20vw,15rem);line-height:.72;letter-spacing:-7px;color:white;text-shadow:0 0 15px rgba(255,255,255,.4),0 0 40px rgba(255,0,170,.5),0 0 100px rgba(100,0,255,.4);animation:Glitch 5s infinite}
+.Hero h1::before,.Hero h1::after{content:"FIZOGON";position:absolute;inset:0;pointer-events:none;opacity:.3}
+.Hero h1::before{color:#ff00c8;transform:translate(-4px,2px);clip-path:inset(15% 0 65% 0);animation:GlitchOne 2.7s infinite}
+.Hero h1::after{color:#00eaff;transform:translate(4px,-2px);clip-path:inset(65% 0 15% 0);animation:GlitchTwo 2.2s infinite}
+@keyframes GlitchOne{0%,90%,100%{transform:translate(-4px,2px)}92%{transform:translate(12px,-3px)}94%{transform:translate(-10px,4px)}}
+@keyframes GlitchTwo{0%,87%,100%{transform:translate(4px,-2px)}89%{transform:translate(-12px,3px)}91%{transform:translate(9px,-4px)}}
+@keyframes Glitch{0%,96%,100%{transform:translate(0)}97%{transform:translate(2px,-1px)}98%{transform:translate(-2px,1px)}}
+.Hero p{max-width:580px;margin:38px auto 0;color:#999;font-size:1rem;line-height:1.8}
+.HeroButtons{margin-top:32px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.Button{padding:14px 24px;border:1px solid rgba(255,255,255,.12);border-radius:12px;background:rgba(255,255,255,.045);font-weight:700;font-size:.85rem;transition:.3s}
+.Button:hover{transform:translateY(-5px);border-color:rgba(255,0,170,.5);box-shadow:0 15px 35px rgba(255,0,170,.15)}
+.Button.Primary{border:none;background:linear-gradient(100deg,#ff009d,#742cff);box-shadow:0 0 35px rgba(255,0,157,.35)}
+.Button.Primary:hover{box-shadow:0 0 55px rgba(255,0,157,.65)}
+.Orbit{position:absolute;width:600px;height:600px;border:1px solid rgba(255,0,170,.07);border-radius:50%;pointer-events:none;animation:OrbitSpin 20s linear infinite}
+.Orbit::before,.Orbit::after{content:"";position:absolute;border-radius:50%;background:white;box-shadow:0 0 10px #ff00ae,0 0 30px #ff00ae}
+.Orbit::before{width:5px;height:5px;top:10%;left:18%}.Orbit::after{width:3px;height:3px;right:12%;bottom:20%}
+@keyframes OrbitSpin{to{transform:rotate(360deg)}}
+
+section{width:min(1100px,92%);margin:auto;padding:110px 0}
+.SectionHeader{margin-bottom:38px}
+.SectionTag{color:#ff28b7;font-size:.7rem;font-weight:700;letter-spacing:4px}
+.SectionHeader h2{margin-top:8px;font-family:Anton,sans-serif;font-size:clamp(3rem,7vw,5.5rem);line-height:.95}
+.SectionHeader p{margin-top:10px;color:#666}
+
+.SongGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.Song{position:relative;padding:22px;min-height:190px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;border:1px solid rgba(255,255,255,.08);border-radius:19px;background:rgba(255,255,255,.025);transition:.35s}
+.Song:hover{transform:translateY(-9px);border-color:rgba(255,0,170,.35);box-shadow:0 25px 60px rgba(0,0,0,.35)}
+.Song::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:linear-gradient(120deg,transparent,rgba(255,255,255,.05),transparent);transform:translateX(-100%);transition:.6s}
+.Song:hover::after{transform:translateX(100%)}
+.SongNumber{position:relative;z-index:2;width:fit-content;padding:5px 8px;border-radius:7px;background:rgba(0,0,0,.65);backdrop-filter:blur(12px);font-size:.65rem;font-weight:700}
+.SongInfo{position:relative;z-index:2;padding-top:35px}
+.SongInfo h3{font-size:1.05rem}
+.SongInfo p{margin-top:5px;color:#666;font-size:.7rem}
+.SongListen{display:inline-block;margin-top:11px;color:#ff28b7;font-size:.65rem;font-weight:700;letter-spacing:1px}
+
+.Marquee{width:100%;overflow:hidden;padding:20px 0;border-top:1px solid rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.05);background:rgba(255,255,255,.015)}
+.MarqueeTrack{width:max-content;display:flex;gap:45px;animation:Marquee 18s linear infinite}
+.Marquee span{color:#444;font-family:Anton,sans-serif;font-size:1.5rem;letter-spacing:2px}
+.Marquee span:nth-child(even){color:#ff159d}
+@keyframes Marquee{to{transform:translateX(-50%)}}
+
+.AboutBox{position:relative;padding:50px;overflow:hidden;border:1px solid rgba(255,255,255,.08);border-radius:28px;background:radial-gradient(circle at 100% 0%,rgba(255,0,170,.1),transparent 35%),rgba(255,255,255,.025)}
+.AboutBox::before{content:"FZ";position:absolute;right:30px;bottom:-60px;font-family:Anton,sans-serif;font-size:14rem;color:rgba(255,255,255,.015)}
+.AboutBox p{position:relative;z-index:2;max-width:780px;color:#aaa;font-size:1.1rem;line-height:2}
+.AboutBox strong{color:white}
+
+.SocialGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
+.Social{padding:28px 15px;text-align:center;border:1px solid rgba(255,255,255,.08);border-radius:18px;background:rgba(255,255,255,.025);transition:.3s}
+.Social:hover{transform:translateY(-7px);border-color:rgba(255,0,170,.4);box-shadow:0 20px 45px rgba(255,0,170,.1)}
+.SocialIcon{margin-bottom:12px;font-size:1.8rem}
+.Social h3{font-size:.8rem;letter-spacing:1px}
+.Social p{margin-top:5px;color:#555;font-size:.65rem}
+
+.SoundWave{display:flex;align-items:center;justify-content:center;gap:4px;height:40px;margin-top:30px}
+.SoundWave span{width:3px;height:15px;border-radius:10px;background:#ff159d;box-shadow:0 0 10px #ff159d;animation:Wave .8s ease-in-out infinite alternate}
+.SoundWave span:nth-child(2){animation-delay:-.1s;height:25px}.SoundWave span:nth-child(3){animation-delay:-.2s;height:35px}.SoundWave span:nth-child(4){animation-delay:-.3s;height:20px}.SoundWave span:nth-child(5){animation-delay:-.4s;height:30px}.SoundWave span:nth-child(6){animation-delay:-.5s;height:17px}.SoundWave span:nth-child(7){animation-delay:-.6s;height:27px}
+@keyframes Wave{to{transform:scaleY(.35);opacity:.4}}
+
+footer{padding:100px 20px 70px;text-align:center;border-top:1px solid rgba(255,255,255,.05)}
+.FooterLogo{font-family:Anton,sans-serif;font-size:4rem;text-shadow:0 0 15px #ff159d,0 0 50px rgba(255,0,170,.4)}
+footer p{margin-top:10px;color:#444;font-size:.7rem;letter-spacing:2px}
+.FooterLinks{display:flex;justify-content:center;gap:25px;margin-top:25px}
+.FooterLinks a{color:#666;font-size:.7rem;font-weight:700;transition:.2s}
+.FooterLinks a:hover{color:white}
+
+.Reveal{opacity:0;transform:translateY(35px);transition:opacity .8s ease,transform .8s ease}
+.Reveal.Visible{opacity:1;transform:translateY(0)}
+
+.CursorGlow{position:fixed;width:180px;height:180px;pointer-events:none;z-index:200;border-radius:50%;background:radial-gradient(circle,rgba(255,0,170,.09),transparent 65%);transform:translate(-50%,-50%)}
+
+@media(max-width:750px){
+nav{width:94%}.NavLinks{display:none}.Hero{padding-top:130px}.Hero h1{font-size:5.5rem;letter-spacing:-3px}.Orbit{width:420px;height:420px}section{padding:80px 0}.SongGrid{grid-template-columns:repeat(2,1fr)}.SocialGrid{grid-template-columns:repeat(2,1fr)}.AboutBox{padding:28px}.AboutBox p{font-size:.95rem}
+}
+@media(max-width:430px){
+.Hero h1{font-size:4.2rem}.SongGrid{grid-template-columns:1fr}.SocialGrid{grid-template-columns:repeat(2,1fr)}.FooterLogo{font-size:3rem}
+}
+@media(prefers-reduced-motion:reduce){
+*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}
+}
+</style>
+</head>
+
+<body>
+
+<div class="Background">
+<div class="Grid"></div>
+<div class="Glow One"></div>
+<div class="Glow Two"></div>
+<div class="Glow Three"></div>
+<div class="Particles">
+<span class="Particle"></span><span class="Particle"></span><span class="Particle"></span><span class="Particle"></span>
+<span class="Particle"></span><span class="Particle"></span><span class="Particle"></span><span class="Particle"></span>
+</div>
+</div>
+
+<div class="CursorGlow" id="CursorGlow"></div>
+
+<nav>
+<a href="#" class="NavLogo">FIZOGON</a>
+<div class="NavLinks">
+<a href="#music">Music</a>
+<a href="#about">About</a>
+<a href="#socials">Socials</a>
+</div>
+<a href="https://soundcloud.com/fizogon" target="_blank" rel="noopener" class="NavButton">SOUNDCLOUD ↗</a>
+</nav>
+
+<main>
+
+<section class="Hero">
+<div class="Orbit"></div>
+<div class="HeroContent">
+<div class="Eyebrow"><span class="LiveDot"></span>MUSIC OUT NOW</div>
+<h1>FIZOGON</h1>
+<p>Pretty sounds. Ugly feelings.<br>Hyperpop, digicore, scenecore and emotional electronic music.</p>
+<div class="HeroButtons">
+<a href="#music" class="Button Primary">LISTEN NOW →</a>
+<a href="https://soundcloud.com/fizogon" target="_blank" rel="noopener" class="Button">SOUNDCLOUD ↗</a>
+</div>
+<div class="SoundWave"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+</div>
+</section>
+
+<div class="Marquee">
+<div class="MarqueeTrack">
+<span>FIZOGON</span><span>HYPERPOP</span><span>DIGICORE</span><span>SCENECORE</span><span>EMO RAP</span>
+<span>FIZOGON</span><span>HYPERPOP</span><span>DIGICORE</span><span>SCENECORE</span><span>EMO RAP</span>
+</div>
+</div>
+
+<section id="music">
+<div class="SectionHeader Reveal">
+<span class="SectionTag">01 / MUSIC</span>
+<h2>MUSIC</h2>
+<p>Turn it up. Don't think too much.</p>
+</div>
+
+<div class="SongGrid">
+
+<a href="https://soundcloud.com/fizogon/imfine" target="_blank" rel="noopener" class="Song Reveal">
+<span class="SongNumber">01</span>
+<div class="SongInfo"><h3>I'M FINE</h3><p>Single • 2026</p><span class="SongListen">LISTEN ↗</span></div>
+</a>
+
+<a href="https://soundcloud.com/fizogon/realorfake" target="_blank" rel="noopener" class="Song Reveal">
+<span class="SongNumber">02</span>
+<div class="SongInfo"><h3>AM I REAL?</h3><p>Single • 2026</p><span class="SongListen">LISTEN ↗</span></div>
+</a>
+
+<a href="https://soundcloud.com/fizogon/biggestmistake" target="_blank" rel="noopener" class="Song Reveal">
+<span class="SongNumber">03</span>
+<div class="SongInfo"><h3>BIGGEST MISTAKE</h3><p>Single • 2026</p><span class="SongListen">LISTEN ↗</span></div>
+</a>
+
+<a href="https://soundcloud.com/fizogon/imissme" target="_blank" rel="noopener" class="Song Reveal">
+<span class="SongNumber">04</span>
+<div class="SongInfo"><h3>I MISS ME</h3><p>Single • 2026</p><span class="SongListen">LISTEN ↗</span></div>
+</a>
+
+<a href="https://soundcloud.com/fizogon/feelagain" target="_blank" rel="noopener" class="Song Reveal">
+<span class="SongNumber">05</span>
+<div class="SongInfo"><h3>FEEL AGAIN</h3><p>Single • 2026</p><span class="SongListen">LISTEN ↗</span></div>
+</a>
+
+</div>
+</section>
+
+<section id="about">
+<div class="SectionHeader Reveal">
+<span class="SectionTag">02 / ABOUT</span>
+<h2>WHO IS FIZOGON?</h2>
+</div>
+<div class="AboutBox Reveal">
+<p>
+Heya, I'm <strong>Fizogon</strong>.<br>
+I'm an independent artist creating hyperpop-inspired music that mixes bright electronic production with darker, emotional writing.
+<br><br>
+Hyperpop, digicore, scenecore, emo rap and nostalgic internet sounds all collide together to create something loud, melodic and unapologetically emotional.
+<br><br>
+Outside of music, I also make websites and Roblox games.
+<br><br>
+<strong>Pretty sounds. Ugly feelings.</strong>
+</p>
+</div>
+</section>
+
+<section id="socials">
+<div class="SectionHeader Reveal">
+<span class="SectionTag">03 / CONNECT</span>
+<h2>FIND ME</h2>
+<p>Follow the chaos.</p>
+</div>
+
+<div class="SocialGrid">
+<a href="https://soundcloud.com/fizogon" target="_blank" rel="noopener" class="Social Reveal">
+<div class="SocialIcon">♫</div>
+<h3>SOUNDCLOUD</h3>
+<p>STREAM MUSIC</p>
+</a>
+
+<a href="https://soundcloud.com/fizogon" target="_blank" rel="noopener" class="Social Reveal">
+<div class="SocialIcon">🎵</div>
+<h3>MUSIC</h3>
+<p>ALL RELEASES</p>
+</a>
+</div>
+</section>
+
+</main>
+
+<footer>
+<div class="FooterLogo">FIZOGON</div>
+<p>MADE WITH TOO MUCH EMOTION.</p>
+<div class="FooterLinks">
+<a href="#music">MUSIC</a>
+<a href="#about">ABOUT</a>
+<a href="#socials">SOCIALS</a>
+<a href="https://soundcloud.com/fizogon" target="_blank" rel="noopener">SOUNDCLOUD ↗</a>
+</div>
+<p style="margin-top:35px;">© 2026 FIZOGON. ALL RIGHTS RESERVED.</p>
+</footer>
+
+<script>
+const Reveals=document.querySelectorAll(".Reveal");
+const RevealObserver=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting) entry.target.classList.add("Visible");
+});
+},{threshold:.12});
+Reveals.forEach(element=>RevealObserver.observe(element));
+
+const CursorGlow=document.getElementById("CursorGlow");
+document.addEventListener("mousemove",event=>{
+CursorGlow.style.left=event.clientX+"px";
+CursorGlow.style.top=event.clientY+"px";
+});
+
+if(window.innerWidth<=750) CursorGlow.style.display="none";
+
+document.querySelectorAll(".Button,.NavButton").forEach(button=>{
+button.addEventListener("mousemove",event=>{
+const rect=button.getBoundingClientRect();
+const x=event.clientX-rect.left-rect.width/2;
+const y=event.clientY-rect.top-rect.height/2;
+button.style.transform=`translate(${x*.08}px,${y*.08}px)`;
+});
+button.addEventListener("mouseleave",()=>button.style.transform="");
+});
+</script>
+
+</body>
+</html>
