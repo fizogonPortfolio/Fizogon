@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fizogonportfolio.github.io/Fizogon/sitemap.xml
