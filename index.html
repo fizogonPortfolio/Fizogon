@@ -102,12 +102,25 @@
         "https://fizogonportfolio.github.io/Fizogon/Images/FizogonFaceReveal2.png"
       ],
       "description": "Fizogon, also known online as Fiz, Fizo and Tys, is an independent music artist, Roblox game developer and web designer. Their music includes hyperpop, digicore, scenecore, emo rap and emotional electronic music. Their development work includes Roblox game systems using Luau and websites built using HTML, CSS and JavaScript.",
-      "jobTitle": [
-        "Independent Music Artist",
-        "Roblox Game Developer",
+      
+    "jobTitle": [
+        "Roblox Developer",
+        "Web Developer",
         "Web Designer",
-        "Web Developer"
-      ],
+        "Cybersecurity Student",
+        "Independent Music Artist"
+        "Penetration Tester",
+        "Cybersecurity",
+    ],
+    "sameAs": [
+    "https://soundcloud.com/fizogon",
+    "https://www.tiktok.com/@femboyfizo",
+    "https://www.snapchat.com/add/fizogon",
+    "https://www.roblox.com/users/842770758/profile",
+    "https://www.rolimons.com/group/35303347"
+    ],
+
+
       "knowsAbout": [
         "Hyperpop",
         "Digicore",
@@ -131,11 +144,6 @@
         "Cybersecurity",
         "Information Security",
         "Ethical Hacking"
-      ],
-      "sameAs": [
-        "https://soundcloud.com/fizogon",
-        "https://www.tiktok.com/@femboyfizo",
-        "https://www.snapchat.com/add/fizogon"
       ],
       "subjectOf": [
         {
@@ -607,6 +615,100 @@ section {
     display: grid;
     grid-template-columns: repeat(3,minmax(0,1fr));
     gap: 16px;
+}
+
+.personal-details {
+  width: 100%;
+  padding: 50px 20px;
+  box-sizing: border-box;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.personal-details-card {
+  position: relative;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 38px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 0, 157, 0.3);
+  border-radius: 22px;
+  background:
+    radial-gradient(
+      ellipse at top left,
+      rgba(255, 0, 157, 0.12),
+      transparent 55%
+    ),
+    linear-gradient(135deg, #100813, #08060c);
+  box-shadow:
+    0 0 35px rgba(255, 0, 157, 0.08),
+    inset 0 0 25px rgba(116, 44, 255, 0.04);
+}
+
+.personal-details-label {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: #ff009d;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.personal-details-card h2 {
+  margin: 0 0 12px;
+  color: #fff;
+  font-size: clamp(27px, 5vw, 40px);
+  font-weight: 700;
+}
+
+.personal-details-description {
+  margin: 0 0 28px;
+  color: #aaa2b5;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.personal-details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.personal-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.personal-detail-label {
+  color: #93869f;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.personal-detail-value {
+  color: #fff;
+  font-size: clamp(16px, 3vw, 21px);
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 480px) {
+  .personal-details {
+    padding: 30px 14px;
+  }
+
+  .personal-details-card {
+    padding: 24px 18px;
+  }
+
+  .personal-details-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .Song {
@@ -1379,6 +1481,61 @@ footer p {
     </div>
 </section>
 
+
+<section id="technical-work">
+    <div class="SectionHeader Reveal">
+        <span class="SectionTag">07 / TECHNICAL WORK</span>
+        <h2>DEVELOPMENT & CYBERSECURITY</h2>
+        <p>
+            Programming, web development and cybersecurity learning
+            by Fizogon.
+        </p>
+    </div>
+
+    <div class="InfoGrid">
+        <article class="InfoCard Reveal">
+            <span class="InfoNumber">01</span>
+            <h3>WEB DEVELOPMENT</h3>
+            <p>
+                Building websites with HTML, CSS and JavaScript,
+                including responsive layouts, custom interfaces,
+                animations, metadata and structured data.
+            </p>
+        </article>
+
+        <article class="InfoCard Reveal">
+            <span class="InfoNumber">02</span>
+            <h3>ROBLOX PROGRAMMING</h3>
+            <p>
+                Developing Roblox experiences using Luau,
+                including gameplay systems, progression mechanics,
+                modules, user interfaces and game optimisation.
+            </p>
+        </article>
+
+        <article class="InfoCard Reveal">
+            <span class="InfoNumber">03</span>
+            <h3>CYBERSECURITY</h3>
+            <p>
+                Studying information security, network security,
+                access control, security principles and ethical
+                testing in authorised environments.
+            </p>
+        </article>
+
+        <article class="InfoCard Reveal">
+            <span class="InfoNumber">04</span>
+            <h3>SEO & TECHNICAL WEB TOOLS</h3>
+            <p>
+                Exploring search engine optimisation, website
+                indexing, XML sitemaps, robots.txt, metadata
+                and structured data.
+            </p>
+        </article>
+    </div>
+</section>
+
+
 <section id="projects">
     <div class="SectionHeader Reveal">
         <span class="SectionTag">05 / PROJECTS</span>
@@ -1451,6 +1608,33 @@ footer p {
             <p>FIZOGON_</p>
         </div>
     </div>
+</section>
+
+<section id="personal-details" class="personal-details" aria-labelledby="personal-details-title">
+  <div class="personal-details-card">
+    <span class="personal-details-label">PERSONAL INFORMATION</span>
+
+    <h2 id="personal-details-title">Behind the Name</h2>
+
+    <p class="personal-details-description">
+      A little more about Fizogon, also known as Fiz, Fizo and Tys.
+    </p>
+
+    <div class="personal-details-grid">
+      <div class="personal-detail">
+        <span class="personal-detail-label">AGE</span>
+        <span class="personal-detail-value">16 years old</span>
+      </div>
+
+      <div class="personal-detail">
+        <span class="personal-detail-label">DATE OF BIRTH</span>
+        <time
+          class="personal-detail-value"
+          datetime="2010-06-22"
+        >22 June 2010</time>
+      </div>
+    </div>
+  </div>
 </section>
 
 </main>
